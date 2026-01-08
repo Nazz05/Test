@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Quản Lý Đơn Hàng - Sixedi Admin</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#00338D", // Extracted roughly from the 'Sixedi' logo
+                        "background-light": "#F3F4F6",
+                        "background-dark": "#111827",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1F2937",
+                        "border-light": "#E5E7EB",
+                        "border-dark": "#374151",
+                        "text-primary-light": "#111827",
+                        "text-primary-dark": "#F9FAFB",
+                        "text-secondary-light": "#6B7280",
+                        "text-secondary-dark": "#9CA3AF",
+                        "success-light": "#DEF7EC",
+                        "success-dark": "#064E3B",
+                        "success-text-light": "#03543F",
+                        "success-text-dark": "#34D399",
+                        "warning-light": "#FEF3C7",
+                        "warning-dark": "#78350F",
+                        "warning-text-light": "#92400E",
+                        "warning-text-dark": "#FCD34D",
+                        "danger-light": "#FDE8E8",
+                        "danger-dark": "#7F1D1D",
+                        "danger-text-light": "#9B1C1C",
+                        "danger-text-dark": "#F87171",
+                    },
+                    fontFamily: {
+                        display: ["Inter", "sans-serif"],
+                        body: ["Inter", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-primary-light dark:text-text-primary-dark transition-colors duration-200">
+<div class="flex h-screen overflow-hidden">
+<aside class="hidden w-64 overflow-y-auto border-r border-border-light bg-surface-light dark:border-border-dark dark:bg-surface-dark md:block flex-shrink-0">
+<div class="flex h-16 items-center justify-center border-b border-border-light dark:border-border-dark px-6">
+<div class="flex items-center space-x-2">
+<span class="text-3xl font-bold text-primary tracking-tight">Sixedi</span>
+</div>
+</div>
+<div class="py-4">
+<nav class="space-y-1 px-2">
+<a class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800" href="#">
+<span class="material-icons-outlined mr-3 text-lg">dashboard</span>
+                        Tổng quan
+                    </a>
+<a class="group flex items-center rounded-md bg-primary/10 px-3 py-2 text-sm font-medium text-primary dark:bg-primary/20 dark:text-white" href="#">
+<span class="material-icons-outlined mr-3 text-lg">shopping_bag</span>
+                        Đơn hàng
+                    </a>
+<a class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800" href="#">
+<span class="material-icons-outlined mr-3 text-lg">inventory_2</span>
+                        Sản phẩm
+                    </a>
+<a class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800" href="#">
+<span class="material-icons-outlined mr-3 text-lg">people</span>
+                        Khách hàng
+                    </a>
+<a class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800" href="#">
+<span class="material-icons-outlined mr-3 text-lg">analytics</span>
+                        Báo cáo
+                    </a>
+<div class="pt-4 pb-2">
+<p class="px-3 text-xs font-semibold uppercase text-text-secondary-light dark:text-gray-500">Cài đặt</p>
+</div>
+<a class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800" href="#">
+<span class="material-icons-outlined mr-3 text-lg">settings</span>
+                        Cấu hình
+                    </a>
+<a class="group flex items-center rounded-md px-3 py-2 text-sm font-medium text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800" href="#">
+<span class="material-icons-outlined mr-3 text-lg">logout</span>
+                        Đăng xuất
+                    </a>
+</nav>
+</div>
+</aside>
+<div class="flex flex-1 flex-col overflow-hidden">
+<header class="flex h-16 items-center justify-between border-b border-border-light bg-surface-light px-6 dark:border-border-dark dark:bg-surface-dark">
+<div class="flex items-center md:hidden">
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark">
+<span class="material-icons-outlined">menu</span>
+</button>
+<span class="ml-4 text-xl font-bold text-primary">Sixedi</span>
+</div>
+<div class="hidden w-full max-w-md md:flex">
+<div class="relative w-full">
+<span class="absolute inset-y-0 left-0 flex items-center pl-3">
+<span class="material-icons-outlined text-gray-400">search</span>
+</span>
+<input class="block w-full rounded-md border-border-light bg-gray-50 py-2 pl-10 pr-3 text-sm placeholder-gray-500 focus:border-primary focus:ring-1 focus:ring-primary dark:border-border-dark dark:bg-gray-800 dark:text-white dark:placeholder-gray-400" placeholder="Tìm kiếm đơn hàng, khách hàng..." type="text"/>
+</div>
+</div>
+<div class="flex items-center space-x-4">
+<button class="rounded-full p-1 text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined">dark_mode</span>
+</button>
+<button class="relative rounded-full p-1 text-text-secondary-light hover:bg-gray-100 dark:text-text-secondary-dark dark:hover:bg-gray-800">
+<span class="material-icons-outlined">notifications</span>
+<span class="absolute top-1 right-1 h-2 w-2 rounded-full bg-red-500"></span>
+</button>
+<div class="flex items-center space-x-2">
+<img alt="Admin Avatar" class="h-8 w-8 rounded-full border border-gray-200 dark:border-gray-700 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuApES5eRsWIGdZnrk2aD_xcQt2NtirIneUXfcPHgCQyFEnbumbMkK4dQz3nuoDvvw7e_-vyt6QDC_0cw7BkPCVK191xpboUnB1v6GXfeMXcBHfrM9JE45UmUBRhlOMz4uy3mghS3G7Kve54lsW9HQGABXukx-AQ7N6cLt9aRPZopVueU5N_yJjQwgZLP6wJeEJYlueSMG8-okzMu_zFO4uasvGt_IUZzcD7mW9Mt2hoGKx8DZwuEHX4exMAER1zgX7aqXVXTgl3k8yY"/>
+<span class="hidden text-sm font-medium text-text-primary-light dark:text-text-primary-dark md:block">Admin</span>
+</div>
+</div>
+</header>
+<main class="flex-1 overflow-y-auto bg-background-light p-6 dark:bg-background-dark">
+<div class="mb-6 flex flex-col justify-between space-y-4 sm:flex-row sm:items-center sm:space-y-0">
+<div>
+<h1 class="text-2xl font-bold text-text-primary-light dark:text-text-primary-dark">Quản Lý Đơn Hàng</h1>
+<nav class="mt-1 flex text-sm text-text-secondary-light dark:text-text-secondary-dark">
+<a class="hover:text-primary" href="#">Dashboard</a>
+<span class="mx-2">/</span>
+<span class="font-medium text-primary">Đơn hàng</span>
+</nav>
+</div>
+<div class="flex space-x-3">
+<button class="flex items-center rounded-md border border-border-light bg-surface-light px-4 py-2 text-sm font-medium text-text-primary-light hover:bg-gray-50 dark:border-border-dark dark:bg-surface-dark dark:text-text-primary-dark dark:hover:bg-gray-800">
+<span class="material-icons-outlined mr-2 text-base">file_download</span>
+                            Xuất Excel
+                        </button>
+<button class="flex items-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-blue-700 shadow-sm transition-colors">
+<span class="material-icons-outlined mr-2 text-base">add</span>
+                            Tạo Đơn Mới
+                        </button>
+</div>
+</div>
+<div class="mb-6 grid grid-cols-1 gap-4 rounded-lg bg-surface-light p-4 shadow-sm dark:bg-surface-dark sm:grid-cols-2 lg:grid-cols-4">
+<div>
+<label class="mb-1 block text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">Trạng thái</label>
+<select class="block w-full rounded-md border-border-light bg-gray-50 py-2 text-sm focus:border-primary focus:ring-primary dark:border-border-dark dark:bg-gray-800 dark:text-white">
+<option>Tất cả trạng thái</option>
+<option>Chờ xác nhận</option>
+<option>Đang giao</option>
+<option>Hoàn thành</option>
+<option>Đã hủy</option>
+</select>
+</div>
+<div>
+<label class="mb-1 block text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">Thời gian</label>
+<select class="block w-full rounded-md border-border-light bg-gray-50 py-2 text-sm focus:border-primary focus:ring-primary dark:border-border-dark dark:bg-gray-800 dark:text-white">
+<option>Hôm nay</option>
+<option>Tuần này</option>
+<option>Tháng này</option>
+<option>Tùy chỉnh</option>
+</select>
+</div>
+<div>
+<label class="mb-1 block text-xs font-medium text-text-secondary-light dark:text-text-secondary-dark">Thanh toán</label>
+<select class="block w-full rounded-md border-border-light bg-gray-50 py-2 text-sm focus:border-primary focus:ring-primary dark:border-border-dark dark:bg-gray-800 dark:text-white">
+<option>Tất cả</option>
+<option>Đã thanh toán</option>
+<option>Chưa thanh toán</option>
+</select>
+</div>
+<div class="flex items-end">
+<button class="w-full rounded-md bg-primary/10 px-4 py-2 text-sm font-medium text-primary hover:bg-primary/20 dark:bg-primary/20 dark:text-white dark:hover:bg-primary/30 transition">
+                            Lọc kết quả
+                        </button>
+</div>
+</div>
+<div class="mb-6 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+<div class="rounded-lg bg-surface-light p-4 shadow-sm dark:bg-surface-dark">
+<div class="flex items-center">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-blue-100 text-blue-600 dark:bg-blue-900 dark:text-blue-300">
+<span class="material-icons-outlined">shopping_cart</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Tổng đơn hàng</p>
+<p class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark">1,245</p>
+</div>
+</div>
+</div>
+<div class="rounded-lg bg-surface-light p-4 shadow-sm dark:bg-surface-dark">
+<div class="flex items-center">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-yellow-100 text-yellow-600 dark:bg-yellow-900 dark:text-yellow-300">
+<span class="material-icons-outlined">pending_actions</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Chờ xử lý</p>
+<p class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark">45</p>
+</div>
+</div>
+</div>
+<div class="rounded-lg bg-surface-light p-4 shadow-sm dark:bg-surface-dark">
+<div class="flex items-center">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-green-100 text-green-600 dark:bg-green-900 dark:text-green-300">
+<span class="material-icons-outlined">local_shipping</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Đang giao</p>
+<p class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark">128</p>
+</div>
+</div>
+</div>
+<div class="rounded-lg bg-surface-light p-4 shadow-sm dark:bg-surface-dark">
+<div class="flex items-center">
+<div class="flex h-10 w-10 items-center justify-center rounded-full bg-red-100 text-red-600 dark:bg-red-900 dark:text-red-300">
+<span class="material-icons-outlined">assignment_return</span>
+</div>
+<div class="ml-4">
+<p class="text-sm font-medium text-text-secondary-light dark:text-text-secondary-dark">Hoàn trả</p>
+<p class="text-xl font-semibold text-text-primary-light dark:text-text-primary-dark">12</p>
+</div>
+</div>
+</div>
+</div>
+<div class="overflow-hidden rounded-lg border border-border-light bg-surface-light shadow dark:border-border-dark dark:bg-surface-dark">
+<div class="overflow-x-auto">
+<table class="w-full whitespace-nowrap text-left text-sm">
+<thead class="bg-gray-50 text-text-secondary-light dark:bg-gray-800 dark:text-text-secondary-dark">
+<tr>
+<th class="px-6 py-3 font-semibold" scope="col">Mã đơn hàng</th>
+<th class="px-6 py-3 font-semibold" scope="col">Khách hàng</th>
+<th class="px-6 py-3 font-semibold" scope="col">Ngày đặt</th>
+<th class="px-6 py-3 font-semibold" scope="col">Tổng tiền</th>
+<th class="px-6 py-3 font-semibold" scope="col">Trạng thái</th>
+<th class="px-6 py-3 font-semibold text-right" scope="col">Thao tác</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-border-light dark:divide-border-dark">
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
+<td class="px-6 py-4 font-medium text-primary">
+<a href="#">#ORD-7829</a>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-8 w-8 flex-shrink-0 rounded-full bg-purple-100 text-purple-600 flex items-center justify-center text-xs font-bold mr-3">
+                                                NH
+                                            </div>
+<div>
+<div class="font-medium text-text-primary-light dark:text-text-primary-dark">Nguyễn Văn Hùng</div>
+<div class="text-xs text-text-secondary-light dark:text-text-secondary-dark">hung.nguyen@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light dark:text-text-secondary-dark">
+                                        24/05/2024
+                                    </td>
+<td class="px-6 py-4 font-medium text-text-primary-light dark:text-text-primary-dark">
+                                        2.500.000₫
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex rounded-full bg-success-light px-2 py-1 text-xs font-semibold leading-5 text-success-text-light dark:bg-success-dark dark:text-success-text-dark">
+                                            Hoàn thành
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white mr-2" title="Xem chi tiết">
+<span class="material-icons-outlined text-lg">visibility</span>
+</button>
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white" title="Chỉnh sửa">
+<span class="material-icons-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
+<td class="px-6 py-4 font-medium text-primary">
+<a href="#">#ORD-7830</a>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<img alt="Avatar" class="h-8 w-8 rounded-full mr-3 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB0xbVr4v-2I9tGbq8CpyiOXLEHLRxPDyZqrWWIHNtVi8I9R0172LC_voG7vJxRx2tvNA1YucwzT1bbwJN31CTkMFoYI5o-71u_YpdItPtBzq2zTI4vow4WwIcRxPT_L2ap3fE96S2PAjUyUl4usMnc0mi6wMI5RqTpAAQ4wRbQ3EpeZSDtaRpOO5YE8OMbTY0sPe86puNZEn13VNKVDF5GEVWwEz-WajeOZg-5k-F30gSCBE5Oy7JfUVAZlnEic_V4COO11vy6_kj1"/>
+<div>
+<div class="font-medium text-text-primary-light dark:text-text-primary-dark">Trần Thị Lan</div>
+<div class="text-xs text-text-secondary-light dark:text-text-secondary-dark">lan.tran@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light dark:text-text-secondary-dark">
+                                        24/05/2024
+                                    </td>
+<td class="px-6 py-4 font-medium text-text-primary-light dark:text-text-primary-dark">
+                                        890.000₫
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex rounded-full bg-warning-light px-2 py-1 text-xs font-semibold leading-5 text-warning-text-light dark:bg-warning-dark dark:text-warning-text-dark">
+                                            Đang giao hàng
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white mr-2">
+<span class="material-icons-outlined text-lg">visibility</span>
+</button>
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white">
+<span class="material-icons-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
+<td class="px-6 py-4 font-medium text-primary">
+<a href="#">#ORD-7831</a>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-8 w-8 flex-shrink-0 rounded-full bg-pink-100 text-pink-600 flex items-center justify-center text-xs font-bold mr-3">
+                                                LM
+                                            </div>
+<div>
+<div class="font-medium text-text-primary-light dark:text-text-primary-dark">Lê Minh</div>
+<div class="text-xs text-text-secondary-light dark:text-text-secondary-dark">minh.le@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light dark:text-text-secondary-dark">
+                                        23/05/2024
+                                    </td>
+<td class="px-6 py-4 font-medium text-text-primary-light dark:text-text-primary-dark">
+                                        12.500.000₫
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex rounded-full bg-blue-100 px-2 py-1 text-xs font-semibold leading-5 text-blue-800 dark:bg-blue-900 dark:text-blue-200">
+                                            Chờ xác nhận
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white mr-2">
+<span class="material-icons-outlined text-lg">visibility</span>
+</button>
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white">
+<span class="material-icons-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
+<td class="px-6 py-4 font-medium text-primary">
+<a href="#">#ORD-7832</a>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<img alt="Avatar" class="h-8 w-8 rounded-full mr-3 object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuC6jX8lIDqtt7gLAtZrNmuPUQjmZ5g30rTSMqZCNja95MHK4BXcwsvAldP66DbkOdVZjyxQ_bE3ikMYf9xyDDAnZI_jQpQido4osU4WQV6Fi_573AlmCV-xh6KJMKNZGIke7XhZ7g4lgn2yysLw3YhZZiZBgs_fj_WUagTYlRMqozbzpMEzHILkrifJMNft-IeObyXn3254rTcxHnvPqCzn_myrsu8nFVdx6rUKC88wiNgJVMUieJynXjV-mKwisOlyccgYEp9gu5nT"/>
+<div>
+<div class="font-medium text-text-primary-light dark:text-text-primary-dark">Phạm Quốc Vượng</div>
+<div class="text-xs text-text-secondary-light dark:text-text-secondary-dark">vuong.pham@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light dark:text-text-secondary-dark">
+                                        23/05/2024
+                                    </td>
+<td class="px-6 py-4 font-medium text-text-primary-light dark:text-text-primary-dark">
+                                        450.000₫
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex rounded-full bg-danger-light px-2 py-1 text-xs font-semibold leading-5 text-danger-text-light dark:bg-danger-dark dark:text-danger-text-dark">
+                                            Đã hủy
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white mr-2">
+<span class="material-icons-outlined text-lg">visibility</span>
+</button>
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white">
+<span class="material-icons-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+<tr class="hover:bg-gray-50 dark:hover:bg-gray-800">
+<td class="px-6 py-4 font-medium text-primary">
+<a href="#">#ORD-7833</a>
+</td>
+<td class="px-6 py-4">
+<div class="flex items-center">
+<div class="h-8 w-8 flex-shrink-0 rounded-full bg-green-100 text-green-600 flex items-center justify-center text-xs font-bold mr-3">
+                                                HA
+                                            </div>
+<div>
+<div class="font-medium text-text-primary-light dark:text-text-primary-dark">Hoàng Anh</div>
+<div class="text-xs text-text-secondary-light dark:text-text-secondary-dark">hoang.anh@email.com</div>
+</div>
+</div>
+</td>
+<td class="px-6 py-4 text-text-secondary-light dark:text-text-secondary-dark">
+                                        22/05/2024
+                                    </td>
+<td class="px-6 py-4 font-medium text-text-primary-light dark:text-text-primary-dark">
+                                        1.200.000₫
+                                    </td>
+<td class="px-6 py-4">
+<span class="inline-flex rounded-full bg-success-light px-2 py-1 text-xs font-semibold leading-5 text-success-text-light dark:bg-success-dark dark:text-success-text-dark">
+                                            Hoàn thành
+                                        </span>
+</td>
+<td class="px-6 py-4 text-right">
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white mr-2">
+<span class="material-icons-outlined text-lg">visibility</span>
+</button>
+<button class="text-text-secondary-light hover:text-primary dark:text-text-secondary-dark dark:hover:text-white">
+<span class="material-icons-outlined text-lg">edit</span>
+</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="flex items-center justify-between border-t border-border-light bg-surface-light px-6 py-3 dark:border-border-dark dark:bg-surface-dark">
+<div class="flex flex-1 justify-between sm:hidden">
+<a class="relative inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50" href="#">Previous</a>
+<a class="relative ml-3 inline-flex items-center rounded-md border border-gray-300 bg-white px-4 py-2 text-sm font-medium text-gray-700 hover:bg-gray-50" href="#">Next</a>
+</div>
+<div class="hidden sm:flex sm:flex-1 sm:items-center sm:justify-between">
+<div>
+<p class="text-sm text-text-secondary-light dark:text-text-secondary-dark">
+                                    Hiển thị <span class="font-medium text-text-primary-light dark:text-text-primary-dark">1</span> đến <span class="font-medium text-text-primary-light dark:text-text-primary-dark">10</span> trong số <span class="font-medium text-text-primary-light dark:text-text-primary-dark">97</span> kết quả
+                                </p>
+</div>
+<div>
+<nav aria-label="Pagination" class="isolate inline-flex -space-x-px rounded-md shadow-sm">
+<a class="relative inline-flex items-center rounded-l-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 dark:ring-gray-700 dark:hover:bg-gray-700" href="#">
+<span class="sr-only">Previous</span>
+<span class="material-icons-outlined text-sm">chevron_left</span>
+</a>
+<a aria-current="page" class="relative z-10 inline-flex items-center bg-primary px-4 py-2 text-sm font-semibold text-white focus:z-20 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary" href="#">1</a>
+<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-text-primary-light ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 dark:text-text-primary-dark dark:ring-gray-700 dark:hover:bg-gray-700" href="#">2</a>
+<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-text-primary-light ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 dark:text-text-primary-dark dark:ring-gray-700 dark:hover:bg-gray-700" href="#">3</a>
+<span class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-gray-700 ring-1 ring-inset ring-gray-300 focus:outline-offset-0 dark:text-gray-400 dark:ring-gray-700">...</span>
+<a class="relative inline-flex items-center px-4 py-2 text-sm font-semibold text-text-primary-light ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 dark:text-text-primary-dark dark:ring-gray-700 dark:hover:bg-gray-700" href="#">10</a>
+<a class="relative inline-flex items-center rounded-r-md px-2 py-2 text-gray-400 ring-1 ring-inset ring-gray-300 hover:bg-gray-50 focus:z-20 focus:outline-offset-0 dark:ring-gray-700 dark:hover:bg-gray-700" href="#">
+<span class="sr-only">Next</span>
+<span class="material-icons-outlined text-sm">chevron_right</span>
+</a>
+</nav>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+
+</body></html>

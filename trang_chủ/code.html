@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Sixedi - Thời trang đẳng cấp</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#003380", // Deep Blue from the logo
+                        secondary: "#1E40AF",
+                        "background-light": "#F9FAFB",
+                        "background-dark": "#111827",
+                        "surface-light": "#FFFFFF",
+                        "surface-dark": "#1F2937",
+                        "text-light": "#111827",
+                        "text-dark": "#F3F4F6",
+                    },
+                    fontFamily: {
+                        display: ["'Playfair Display'", "serif"],
+                        body: ["'Inter'", "sans-serif"],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.5rem",
+                        'lg': '1rem',
+                        'xl': '1.5rem',
+                    },
+                },
+            },
+        };
+    </script>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-text-light dark:text-text-dark font-body antialiased transition-colors duration-200">
+<div class="bg-primary text-white text-xs md:text-sm py-2 text-center font-medium">
+        Miễn phí vận chuyển cho đơn hàng từ 500k — <a class="underline hover:text-gray-200" href="#">Mua ngay</a>
+</div>
+<nav class="sticky top-0 z-50 bg-surface-light/90 dark:bg-surface-dark/90 backdrop-blur-md border-b border-gray-200 dark:border-gray-700">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-20">
+<div class="flex items-center md:hidden">
+<button class="text-gray-500 dark:text-gray-300 hover:text-primary focus:outline-none" type="button">
+<span class="material-icons">menu</span>
+</button>
+</div>
+<div class="flex-shrink-0 flex items-center">
+<a class="font-display font-bold text-4xl text-primary tracking-tight" href="#">Sixedi</a>
+</div>
+<div class="hidden md:flex space-x-8 items-center">
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors" href="#">Nam</a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors" href="#">Nữ</a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors" href="#">Bộ Sưu Tập</a>
+<a class="text-gray-700 dark:text-gray-300 hover:text-primary dark:hover:text-white font-medium transition-colors" href="#">Giảm Giá</a>
+</div>
+<div class="flex items-center space-x-4">
+<button class="p-2 text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-icons">search</span>
+</button>
+<button class="p-2 text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors relative">
+<span class="material-icons">shopping_bag</span>
+<span class="absolute top-1 right-1 h-2 w-2 bg-red-500 rounded-full"></span>
+</button>
+<button class="hidden md:block p-2 text-gray-500 dark:text-gray-300 hover:text-primary dark:hover:text-white transition-colors">
+<span class="material-icons">person_outline</span>
+</button>
+</div>
+</div>
+</div>
+</nav>
+<div class="relative bg-surface-light dark:bg-surface-dark overflow-hidden">
+<div class="max-w-7xl mx-auto">
+<div class="relative z-10 pb-8 bg-surface-light dark:bg-surface-dark sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32">
+<svg aria-hidden="true" class="hidden lg:block absolute right-0 inset-y-0 h-full w-48 text-surface-light dark:text-surface-dark transform translate-x-1/2" fill="currentColor" preserveAspectRatio="none" viewBox="0 0 100 100">
+<polygon points="50,0 100,0 50,100 0,100"></polygon>
+</svg>
+<main class="mt-10 mx-auto max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+<div class="sm:text-center lg:text-left">
+<h1 class="text-4xl tracking-tight font-display font-extrabold text-gray-900 dark:text-white sm:text-5xl md:text-6xl">
+<span class="block xl:inline">Phong cách mới</span>
+<span class="block text-primary xl:inline">cho mùa hè rực rỡ</span>
+</h1>
+<p class="mt-3 text-base text-gray-500 dark:text-gray-400 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">
+                            Khám phá bộ sưu tập mới nhất từ Sixedi với những thiết kế tinh tế, chất liệu cao cấp và sự thoải mái tuyệt đối cho mọi hoạt động của bạn.
+                        </p>
+<div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
+<div class="rounded-md shadow">
+<a class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-primary hover:bg-secondary md:py-4 md:text-lg transition-all transform hover:-translate-y-0.5" href="#">
+                                    Mua Ngay
+                                </a>
+</div>
+<div class="mt-3 sm:mt-0 sm:ml-3">
+<a class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-primary bg-blue-100 hover:bg-blue-200 dark:bg-gray-800 dark:text-blue-400 dark:hover:bg-gray-700 md:py-4 md:text-lg transition-all" href="#">
+                                    Xem Lookbook
+                                </a>
+</div>
+</div>
+</div>
+</main>
+</div>
+</div>
+<div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+<img alt="Fashion model wearing Sixedi collection" class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDg-RGk8szuX9GM5KddrQwjLtS0Tx0VwOrGgoMck8Uz8FqIFJ4Dglgmzf2Z2JQ3ouPS5chfWjoebVoDnR55Z9KTeDQXIEKqstO9nxMg8oQ3PtpXzShJ1E5S05SHN3sRbl_2JaIuarnG4Ubn8CfZgNz-M0zJzsOUnr-0JopEtmFCL7rq9nswllxkVxka9ZMcF999-GebA4kmD0S-c5QQ8nJRMzqVTE-5J_gxpijWbCRZJDtC1jT2MrZ54k13lVfmIvKyu37G7eWNNfx8"/>
+</div>
+</div>
+<div class="py-12 bg-white dark:bg-gray-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 gap-y-10 sm:grid-cols-2 gap-x-6 lg:grid-cols-4 lg:gap-x-8">
+<div class="text-center group">
+<div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white mx-auto mb-4 group-hover:scale-110 transition-transform">
+<span class="material-icons">local_shipping</span>
+</div>
+<h3 class="text-lg font-medium text-gray-900 dark:text-white">Giao Hàng Nhanh</h3>
+<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Vận chuyển toàn quốc trong 2-3 ngày.</p>
+</div>
+<div class="text-center group">
+<div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white mx-auto mb-4 group-hover:scale-110 transition-transform">
+<span class="material-icons">published_with_changes</span>
+</div>
+<h3 class="text-lg font-medium text-gray-900 dark:text-white">Đổi Trả Dễ Dàng</h3>
+<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">30 ngày đổi trả miễn phí nếu không ưng ý.</p>
+</div>
+<div class="text-center group">
+<div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white mx-auto mb-4 group-hover:scale-110 transition-transform">
+<span class="material-icons">verified</span>
+</div>
+<h3 class="text-lg font-medium text-gray-900 dark:text-white">Chất Lượng Cao</h3>
+<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Cam kết hàng chính hãng 100%.</p>
+</div>
+<div class="text-center group">
+<div class="flex items-center justify-center h-12 w-12 rounded-md bg-primary text-white mx-auto mb-4 group-hover:scale-110 transition-transform">
+<span class="material-icons">support_agent</span>
+</div>
+<h3 class="text-lg font-medium text-gray-900 dark:text-white">Hỗ Trợ 24/7</h3>
+<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Đội ngũ tư vấn nhiệt tình, tận tâm.</p>
+</div>
+</div>
+</div>
+</div>
+<section class="py-16 bg-gray-50 dark:bg-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white text-center mb-12">Danh Mục Nổi Bật</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<a class="group relative block h-96 overflow-hidden rounded-lg" href="#">
+<img alt="Thời trang nữ" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCcqnAZU3XNkkzZLCuIAracfdG3g7-GF0oXj_IPrZv_TQ9GiSrACUs0lOuwc4XO77Ty073ZbHovtojX97KOl4BmIiJfdIqX4Pl-8Wom9Bg_gRXJywMmm9F5RyVtO4c_uRgGuf8JXFjlLGZx2BLOCwG-xQh1HVPptIGqZYPVaPuHu5NV4fktvZygULryt8JzDqu3oyY-LLt16Mx3WWAtxXKy08uonATPfjcAEgCpWSNBvzpL5tXUh_u-jAJBgpU2OvY6HcVWDaKIm-3j"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<h3 class="text-2xl font-bold text-white font-display">Nữ Giới</h3>
+<p class="mt-2 text-sm text-gray-200">Thanh lịch và quyến rũ</p>
+</div>
+</a>
+<a class="group relative block h-96 overflow-hidden rounded-lg" href="#">
+<img alt="Thời trang nam" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmYfkrk5S9GZDyuAz_emBk_4tdr2JcUVLSPZmXaZReevin9kPnFWj9jbwEV8nc4OG1NbzSrFDpiSHr4ttAYQyvThG-VBkvGjJu-2_0lxeqYj4xl06U1YWTyrYOW4Y5fiVboHRp95nZGbV3klycxBBMNVBhAPgz_YioOPlZGpya-LnAiq9Pp8Jx9_MLT433DTwZXPCf98OZbwKgPQT_Yco3t0h-WHTkTiI9JYD9ccbsOLdoMXpA5Er4ovg-BLqPn5oiby5ZqJaxD58H"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<h3 class="text-2xl font-bold text-white font-display">Nam Giới</h3>
+<p class="mt-2 text-sm text-gray-200">Mạnh mẽ và phong cách</p>
+</div>
+</a>
+<a class="group relative block h-96 overflow-hidden rounded-lg" href="#">
+<img alt="Phụ kiện" class="absolute inset-0 h-full w-full object-cover transition-transform duration-500 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBut99Gmk48WBJj60GQE6M2ndM__tT5HuglYhvWBLKHFRcRnn6Dd2EOh-cxTo4lGFEEcNMVO0-Wz2SDQhhI7ROc87QLUQdsUTFeZhZUG76yQWq7kGAWZ78HFTRuANg16dFH0QZF1mjk7RJBpFXUKRk6S5Hgd17yIaPnP40Q_RQsOYUEtbmevaovS8YxV5eX1e1AsxZZmlckmQMWMEFetYkDxN_NfUoVo2GZ_4aKC98ZW160pIzmfbLDG45aT_Z5gGFU-45M2hcR_6xT"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div>
+<div class="absolute bottom-0 p-6">
+<h3 class="text-2xl font-bold text-white font-display">Phụ Kiện</h3>
+<p class="mt-2 text-sm text-gray-200">Điểm nhấn hoàn hảo</p>
+</div>
+</a>
+</div>
+</div>
+</section>
+<section class="py-16 bg-white dark:bg-gray-900">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-end mb-8">
+<div>
+<h2 class="text-3xl font-display font-bold text-gray-900 dark:text-white">Sản Phẩm Bán Chạy</h2>
+<p class="mt-2 text-gray-500 dark:text-gray-400">Những món đồ được yêu thích nhất tuần qua</p>
+</div>
+<a class="hidden sm:flex items-center text-primary font-medium hover:text-secondary" href="#">
+                    Xem tất cả <span class="material-icons ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+<div class="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700">
+<div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8 relative">
+<span class="absolute top-2 left-2 bg-red-500 text-white text-xs font-bold px-2 py-1 rounded">-20%</span>
+<img alt="Áo khoác Blazer" class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBQmm_bv6lBSd7c6L5mbrm4fFsimkIP5udJTW0GFGsDFjIrTtPalvUBLpKjTyVNqS8Cl8kiYNHnlEKwiRykDzyuY1RaE-IhuiuWFKVIpIwaTGgpo8JcCz0drnpoylYlJ27pnmUd738iWQ5fbhlvDtdNZr4PfO80rLYAtiygpooB2pKb_w8VvPHZ_31y3m_M4AfMlZcX785KYb3DI3lrHcZzgYiTZo3JYUsntrczd-lv4pzeXpip7DNbo4wziNJ54ytx3LPrNqOOx62L"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10">
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">favorite_border</span>
+</button>
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-sm text-gray-500 dark:text-gray-400">Áo khoác</h3>
+<a class="mt-1 block text-lg font-medium text-gray-900 dark:text-white font-display" href="#">Blazer Hàn Quốc</a>
+<div class="mt-2 flex items-center justify-between">
+<p class="text-lg font-bold text-primary">850.000đ</p>
+<p class="text-sm text-gray-400 line-through">1.050.000đ</p>
+</div>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700">
+<div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8 relative">
+<img alt="Áo thun basic" class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB_g87nKrnRnHBfPkj9vhlzexGAD3RsXrmnFLY1zIP-YvLh3mElKxDcjDFK4YuOOvKsVwJXlau3ts-H1X3KC9dOTwJFs5sYY5588vgr3zGM8n6L-Pdm6b5TJf8gyuKwPDXOGu3LEsKK4rzCsJBFZPGyTXrr3GnIS9ZhbfNN57UlxSiD-NqrZJqfYmqorpzu_SfYhUNbR6spuy0Yz31W8Dt48e6JqYjv5wn3Cene1RTImT58GscqoeuPlfGpanqhpfVMszEszcGJCsbi"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10">
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">favorite_border</span>
+</button>
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-sm text-gray-500 dark:text-gray-400">Áo thun</h3>
+<a class="mt-1 block text-lg font-medium text-gray-900 dark:text-white font-display" href="#">Basic White Tee</a>
+<div class="mt-2 flex items-center justify-between">
+<p class="text-lg font-bold text-primary">250.000đ</p>
+</div>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700">
+<div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8 relative">
+<img alt="Giày Sneaker" class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBC3gw4mJuVmhEMAeBvhJVegM46b_UO3N_dkv2fdFzn0NVCUtJkNYkHGrOlIvAsyTrLolatP9dC4FvySY7MZLvW4KWHZibUTpxLdPPQTZdXeRevKeH9bbNHwcUSaClMh9B0Ymy1bNwQ4ROUOTHHk2fHOA8xFGELqB1BkHzXAUYu7rng-DPx1os0C06hpAbWaAT3IzHpC9UWghRpGaNNQTvv2gJkucWelLgo022ZQJZbZ9tfk_YGfNZzGBkneRqO1_5l-JQK0wf6vTi6"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10">
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">favorite_border</span>
+</button>
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-sm text-gray-500 dark:text-gray-400">Giày dép</h3>
+<a class="mt-1 block text-lg font-medium text-gray-900 dark:text-white font-display" href="#">Sneaker Urban</a>
+<div class="mt-2 flex items-center justify-between">
+<p class="text-lg font-bold text-primary">1.200.000đ</p>
+</div>
+</div>
+</div>
+<div class="group relative bg-white dark:bg-gray-800 rounded-lg shadow-sm hover:shadow-lg transition-shadow border border-gray-100 dark:border-gray-700">
+<div class="aspect-w-1 aspect-h-1 w-full overflow-hidden rounded-t-lg bg-gray-200 xl:aspect-w-7 xl:aspect-h-8 relative">
+<span class="absolute top-2 left-2 bg-black text-white text-xs font-bold px-2 py-1 rounded">Mới</span>
+<img alt="Giày da nam" class="h-full w-full object-cover object-center group-hover:opacity-75 transition-opacity" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPXtfd7yVKcgSnZh9oxxTxGSyx26xH_ncUAlLhJsHBdiFWmHucKTnwIp38NQ4TjbNL5EanLzLLPQxTERzDVMRZlzusMnun-2Pb1u0R0KTpD1cPGmU0-5yXxZ9oh7_HlpKWtp29uzG2Kayr6r0zd0zvxPOAtAvS062Y4SUpjVt6458OufK-KjDkE2ecTPsZ8vN4ZGEpCqk3cEojLUtmfwgQElgMQmNy7LGs-siuynTur7hpxnZPdN1MQm7EgQOc_ecmmV3mw6C6tgOG"/>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-black/10">
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">favorite_border</span>
+</button>
+<button class="bg-white text-gray-900 p-2 rounded-full shadow-lg hover:bg-primary hover:text-white transition-colors mx-1">
+<span class="material-icons text-sm">add_shopping_cart</span>
+</button>
+</div>
+</div>
+<div class="p-4">
+<h3 class="text-sm text-gray-500 dark:text-gray-400">Giày dép</h3>
+<a class="mt-1 block text-lg font-medium text-gray-900 dark:text-white font-display" href="#">Chelsea Boot Da</a>
+<div class="mt-2 flex items-center justify-between">
+<p class="text-lg font-bold text-primary">1.850.000đ</p>
+</div>
+</div>
+</div>
+</div>
+<div class="mt-8 text-center sm:hidden">
+<a class="inline-flex items-center text-primary font-medium hover:text-secondary" href="#">
+                    Xem tất cả <span class="material-icons ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</section>
+<section class="relative bg-primary py-16">
+<div class="absolute inset-0 overflow-hidden">
+<img alt="Fashion promotion background" class="w-full h-full object-cover opacity-20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYOM7f34_c_jzNJJfgGxQ1PTyi2dRxEfYwMwsyW_Cw_E78NxwLkH-QkdS9TA17VCJ4NHpE2Zcwjw49AlXwnNr6OdFhDXrt7-fEGlkwbMviFI8HP31WObnHQClS8z2uYGVQpysFEYRHyN3OiCPgs3VOgzI4kZvURXGWvRKJ6VR7lafv9BckuwLHb2sDHO5GJ7mMS7L9Xgm0Xcq5i5dLm5dYrq6TehMZHEBOpjJoLsqxcu5t0tAGcA5Ss4q4zdOMQIqEVVWBlRJMUsTL"/>
+</div>
+<div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col items-center text-center">
+<h2 class="text-3xl font-display font-bold text-white mb-4">Mùa Hè Sôi Động - Sale Up To 50%</h2>
+<p class="text-blue-100 max-w-2xl mb-8">Cập nhật tủ đồ của bạn với những items hot nhất mùa hè này. Ưu đãi có hạn, mua ngay kẻo lỡ!</p>
+<a class="inline-block bg-white text-primary font-bold py-3 px-8 rounded-full hover:bg-gray-100 transition-colors shadow-lg" href="#">Khám Phá Ngay</a>
+</div>
+</section>
+<section class="py-16 bg-gray-50 dark:bg-gray-800">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+<span class="material-icons text-4xl text-primary mb-4">mail_outline</span>
+<h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-2 font-display">Đăng Ký Nhận Tin</h2>
+<p class="text-gray-500 dark:text-gray-400 mb-6">Nhận thông tin về sản phẩm mới và khuyến mãi đặc biệt.</p>
+<form class="max-w-md mx-auto flex gap-2">
+<input class="flex-1 appearance-none border border-gray-300 dark:border-gray-600 dark:bg-gray-700 dark:text-white rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Nhập email của bạn" type="email"/>
+<button class="bg-primary text-white font-medium py-2 px-6 rounded-md hover:bg-secondary transition-colors" type="button">Gửi</button>
+</form>
+</div>
+</section>
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+<div class="col-span-1 md:col-span-1">
+<a class="font-display font-bold text-3xl text-primary mb-4 block" href="#">Sixedi</a>
+<p class="text-gray-500 dark:text-gray-400 text-sm leading-relaxed">
+                        Sixedi mang đến xu hướng thời trang hiện đại, chất lượng cao cho người Việt. Tự tin thể hiện cá tính cùng chúng tôi.
+                    </p>
+<div class="flex space-x-4 mt-6">
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-icons">facebook</span></a> 
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-icons">camera_alt</span></a> 
+<a class="text-gray-400 hover:text-primary" href="#"><span class="material-icons">play_circle_filled</span></a> 
+</div>
+</div>
+<div>
+<h3 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Mua Sắm</h3>
+<ul class="space-y-3">
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Thời trang Nam</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Thời trang Nữ</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Phụ Kiện</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Sale Off</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Hỗ Trợ</h3>
+<ul class="space-y-3">
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Chính sách đổi trả</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Chính sách vận chuyển</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Hướng dẫn chọn size</a></li>
+<li><a class="text-gray-500 dark:text-gray-400 hover:text-primary text-sm" href="#">Liên hệ</a></li>
+</ul>
+</div>
+<div>
+<h3 class="text-sm font-bold text-gray-900 dark:text-white uppercase tracking-wider mb-4">Liên Hệ</h3>
+<ul class="space-y-3">
+<li class="flex items-start text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-icons text-base mr-2 mt-0.5">place</span>
+                            123 Đường ABC, Quận 1, TP.HCM
+                        </li>
+<li class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-icons text-base mr-2">phone</span>
+                            1900 1234
+                        </li>
+<li class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+<span class="material-icons text-base mr-2">email</span>
+                            cskh@sixedi.com
+                        </li>
+</ul>
+</div>
+</div>
+<div class="border-t border-gray-200 dark:border-gray-700 pt-8 text-center">
+<p class="text-sm text-gray-400">© 2023 Sixedi. All rights reserved.</p>
+</div>
+</div>
+</footer>
+
+</body></html>

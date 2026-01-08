@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Địa Chỉ Giao Hàng - Sixedi</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,typography"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        primary: "#0E3A8C", // Derived from Sixedi logo color
+                        "primary-hover": "#0a2b6b",
+                        "background-light": "#f3f4f6",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Inter', 'sans-serif'],
+                    },
+                    borderRadius: {
+                        DEFAULT: "0.375rem",
+                    },
+                },
+            },
+        };
+    </script>
+<style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-gray-800 dark:text-gray-200 transition-colors duration-300 min-h-screen flex flex-col">
+<header class="sticky top-0 z-50 bg-surface-light dark:bg-surface-dark border-b border-gray-200 dark:border-gray-700 shadow-sm">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="flex justify-between items-center h-16">
+<div class="flex-shrink-0 flex items-center gap-2 cursor-pointer">
+<span class="text-3xl font-bold text-primary tracking-tight">Sixedi</span>
+</div>
+<nav class="hidden md:flex space-x-8">
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium" href="#">Trang chủ</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium" href="#">Sản phẩm</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium" href="#">Nam</a>
+<a class="text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary px-3 py-2 text-sm font-medium" href="#">Nữ</a>
+</nav>
+<div class="flex items-center space-x-4">
+<button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+<span class="material-icons-outlined">search</span>
+</button>
+<button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary relative">
+<span class="material-icons-outlined">shopping_cart</span>
+<span class="absolute -top-1 -right-1 bg-red-500 text-white text-xs font-bold rounded-full h-4 w-4 flex items-center justify-center">2</span>
+</button>
+<button class="text-gray-500 dark:text-gray-400 hover:text-primary dark:hover:text-primary">
+<span class="material-icons-outlined">notifications</span>
+</button>
+<div class="ml-2 relative flex items-center gap-2 cursor-pointer">
+<img alt="User Avatar" class="h-8 w-8 rounded-full border border-gray-200 dark:border-gray-600" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBu4JELYvW0kVBrbPMe0qe90jy6vmwJRRw7nn7bIbszg_ZGg5xBRT-qkcULhlVT7bk98OUTsG_2V_xGIOIt44XyiUi90VOrxseQNN_nlLExU8GSSwvRh-2X-6bcf0YCdYKGcjNlXziUsjwrFTYPT5M2nZfWNEPZLNavjCV1053t91xN9q0K-jAw-2kFIbv0pqIzIULNcIVWF3Xn4z_XMQDqCJiWCs8dwgUlYx-j1x-QCAGReMotUQJS99ix3zJFjWn_zCN6Q_WzELQF"/>
+<span class="text-sm font-medium hidden lg:block">Nam Nguyen</span>
+</div>
+<button class="ml-4 p-2 rounded-full bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" onclick="document.documentElement.classList.toggle('dark')">
+<span class="material-icons-outlined text-sm">dark_mode</span>
+</button>
+</div>
+</div>
+</div>
+</header>
+<main class="flex-grow w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="flex items-center text-sm text-gray-500 dark:text-gray-400 mb-6">
+<a class="hover:text-primary" href="#">Trang chủ</a>
+<span class="mx-2">/</span>
+<a class="hover:text-primary" href="#">Tài khoản</a>
+<span class="mx-2">/</span>
+<span class="text-gray-900 dark:text-gray-100 font-medium">Địa chỉ</span>
+</div>
+<div class="lg:grid lg:grid-cols-12 lg:gap-x-8">
+<aside class="py-6 px-2 sm:px-6 lg:py-0 lg:px-0 lg:col-span-3">
+<nav class="space-y-1">
+<div class="flex items-center gap-3 px-3 mb-6">
+<img alt="User Avatar" class="h-12 w-12 rounded-full border border-gray-200 dark:border-gray-600" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDs6KTl14-p0c-njzQ5lRdPirf83LsxMoNTP7RzzbwTKwVlQMUCYx7tjRa0H-630ipLJmfyskeq5G6M68e-NhDe6FhhecgTykxA8_XhLdnYbNTdpOTcfQnqIjW0msMDzP3HxsaWQ9gXornEuudGzqgAPXc37rE27tEj1d3nSaz5hiS_NkkPccqwwxyfw5MwPBb-R0uFTtBnhlCyaUJgOe64U6s8Z7lCiTIUce8yFnNn4SPHuVBkK7g0PPp6-KF3mw6hi3POxRjgcGa7"/>
+<div>
+<p class="text-sm font-medium text-gray-900 dark:text-white">Tài khoản của</p>
+<p class="text-base font-bold text-gray-900 dark:text-white">Nam Nguyen</p>
+</div>
+</div>
+<a class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-icons-outlined mr-3 text-gray-400 group-hover:text-primary">person</span>
+                        Hồ sơ
+                    </a>
+<a class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-icons-outlined mr-3 text-gray-400 group-hover:text-primary">receipt_long</span>
+                        Đơn mua
+                    </a>
+<a class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-icons-outlined mr-3 text-gray-400 group-hover:text-primary">notifications</span>
+                        Thông báo
+                    </a>
+<a class="group flex items-center px-3 py-2 text-sm font-medium text-primary bg-blue-50 dark:bg-gray-800 rounded-md border-l-4 border-primary" href="#">
+<span class="material-icons-outlined mr-3 text-primary">location_on</span>
+                        Địa chỉ
+                    </a>
+<a class="group flex items-center px-3 py-2 text-sm font-medium text-gray-600 dark:text-gray-300 rounded-md hover:bg-gray-50 dark:hover:bg-gray-800 hover:text-primary dark:hover:text-primary" href="#">
+<span class="material-icons-outlined mr-3 text-gray-400 group-hover:text-primary">credit_card</span>
+                        Ngân hàng
+                    </a>
+</nav>
+</aside>
+<div class="space-y-6 sm:px-6 lg:px-0 lg:col-span-9">
+<div class="bg-surface-light dark:bg-surface-dark shadow sm:rounded-lg p-6 flex flex-col sm:flex-row justify-between items-start sm:items-center border-b border-gray-200 dark:border-gray-700">
+<h2 class="text-xl font-bold text-gray-900 dark:text-white mb-4 sm:mb-0">Địa Chỉ Giao Hàng</h2>
+<button class="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-primary hover:bg-primary-hover focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary transition-colors">
+<span class="material-icons-outlined mr-2 text-base">add</span>
+                        Thêm địa chỉ mới
+                    </button>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark shadow sm:rounded-lg divide-y divide-gray-200 dark:divide-gray-700">
+<div class="p-6">
+<div class="flex flex-col sm:flex-row justify-between">
+<div class="flex-1 pr-4">
+<div class="flex items-center mb-2">
+<h3 class="text-base font-semibold text-gray-900 dark:text-white border-r border-gray-300 dark:border-gray-600 pr-3 mr-3">Nam Nguyen</h3>
+<span class="text-gray-500 dark:text-gray-400">(+84) 901 234 567</span>
+</div>
+<div class="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-3">
+<p>Tòa nhà Bitexco Financial Tower</p>
+<p>Số 2 Hải Triều, Phường Bến Nghé</p>
+<p>Quận 1, TP. Hồ Chí Minh</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium border border-primary text-primary dark:text-blue-300 dark:border-blue-300">
+                                    Mặc định
+                                </span>
+</div>
+<div class="flex flex-col items-end mt-4 sm:mt-0 space-y-3">
+<div class="flex space-x-3">
+<button class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">Cập nhật</button>
+</div>
+<button class="text-sm border border-gray-300 dark:border-gray-600 text-gray-400 dark:text-gray-500 bg-gray-50 dark:bg-gray-800 px-3 py-1 rounded cursor-not-allowed" disabled="">
+                                    Thiết lập mặc định
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-col sm:flex-row justify-between">
+<div class="flex-1 pr-4">
+<div class="flex items-center mb-2">
+<h3 class="text-base font-semibold text-gray-900 dark:text-white border-r border-gray-300 dark:border-gray-600 pr-3 mr-3">Nam Nguyen (Nhà riêng)</h3>
+<span class="text-gray-500 dark:text-gray-400">(+84) 912 345 678</span>
+</div>
+<div class="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-3">
+<p>Số 123 Đường Nguyễn Văn Linh</p>
+<p>Phường Tân Phong</p>
+<p>Quận 7, TP. Hồ Chí Minh</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                                    Nhà riêng
+                                </span>
+</div>
+<div class="flex flex-col items-end mt-4 sm:mt-0 space-y-3">
+<div class="flex space-x-3">
+<button class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">Cập nhật</button>
+<button class="text-sm font-medium text-red-600 dark:text-red-400 hover:underline">Xóa</button>
+</div>
+<button class="text-sm border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 px-3 py-1 rounded transition-colors">
+                                    Thiết lập mặc định
+                                </button>
+</div>
+</div>
+</div>
+<div class="p-6">
+<div class="flex flex-col sm:flex-row justify-between">
+<div class="flex-1 pr-4">
+<div class="flex items-center mb-2">
+<h3 class="text-base font-semibold text-gray-900 dark:text-white border-r border-gray-300 dark:border-gray-600 pr-3 mr-3">Anh Nam (Công ty)</h3>
+<span class="text-gray-500 dark:text-gray-400">(+84) 987 654 321</span>
+</div>
+<div class="text-sm text-gray-600 dark:text-gray-300 space-y-1 mb-3">
+<p>Tầng 18, Tòa nhà Landmark 81</p>
+<p>720A Điện Biên Phủ, Phường 22</p>
+<p>Quận Bình Thạnh, TP. Hồ Chí Minh</p>
+</div>
+<span class="inline-flex items-center px-2.5 py-0.5 rounded-md text-xs font-medium bg-gray-100 text-gray-600 dark:bg-gray-700 dark:text-gray-300">
+                                    Văn phòng
+                                </span>
+</div>
+<div class="flex flex-col items-end mt-4 sm:mt-0 space-y-3">
+<div class="flex space-x-3">
+<button class="text-sm font-medium text-blue-600 dark:text-blue-400 hover:underline">Cập nhật</button>
+<button class="text-sm font-medium text-red-600 dark:text-red-400 hover:underline">Xóa</button>
+</div>
+<button class="text-sm border border-gray-300 dark:border-gray-600 text-gray-700 dark:text-gray-300 hover:bg-gray-50 dark:hover:bg-gray-700 px-3 py-1 rounded transition-colors">
+                                    Thiết lập mặc định
+                                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-gray-200 dark:border-gray-700 mt-auto">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+<div class="md:flex md:items-center md:justify-between">
+<div class="flex justify-center md:justify-start">
+<span class="text-2xl font-bold text-primary tracking-tight">Sixedi</span>
+</div>
+<div class="mt-8 md:mt-0 text-center md:text-right">
+<p class="text-sm text-gray-500 dark:text-gray-400">© 2023 Sixedi Fashion. All rights reserved.</p>
+</div>
+</div>
+</div>
+</footer>
+
+</body></html>
